@@ -11,12 +11,30 @@ config.font = wezterm.font("JetBrains Mono", { weight = "Bold" })
 config.font_size = 12.5
 
 config.window_padding = {
-	left = 3,
-	right = 3,
-	top = 0,
-	bottom = 0,
+	left = 5,
+	right = 5,
+	top = 5,
+	bottom = 5,
 }
-
-config.window_background_opacity = 0.9
+config.background = {
+	{
+		source = {
+			File = wezterm.config_dir .. "/background/high-sierra.jpg",
+		},
+		hsb = {
+			hue = 1.0,
+			saturation = 1.02,
+			brightness = 0.25,
+		},
+	},
+	{
+		source = {
+			Color = "#282c35",
+		},
+		width = "100%",
+		height = "100%",
+		opacity = 0.9,
+	},
+}
 
 return config

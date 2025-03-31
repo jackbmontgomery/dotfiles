@@ -6,7 +6,7 @@ return {
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
-      { 'j-hui/fidget.nvim',       opts = {} },
+      { 'j-hui/fidget.nvim', opts = {} },
 
       'hrsh7th/cmp-nvim-lsp',
     },
@@ -121,33 +121,17 @@ return {
             'rust-analyzer',
           },
         },
-        -- pylsp = {
-        -- settings = {
-        -- pylsp = {
-        -- plugins = {
-        -- pyflakes = { enabled = false },
-        -- pycodestyle = { enabled = false },
-        -- autopep8 = { enabled = false },
-        -- yapf = { enabled = false },
-        -- mccabe = { enabled = false },
-        -- pylsp_mypy = { enabled = false },
-        -- pylsp_black = { enabled = false },
-        -- pylsp_isort = { enabled = false },
-        -- },
-        -- },
-        -- },
-        -- },
         basedpyright = {
           settings = {
             basedpyright = {
               disableOrganizeImports = true, -- Using Ruff's import organizer
               disableLanguageServices = false,
               analysis = {
-                ignore = { '*' },                 -- Ignore all files for analysis to exclusively use Ruff for linting
+                ignore = { '*' }, -- Ignore all files for analysis to exclusively use Ruff for linting
                 typeCheckingMode = 'off',
                 diagnosticMode = 'openFilesOnly', -- Only analyze open files
                 useLibraryCodeForTypes = true,
-                autoImportCompletions = true,     -- whether pyright offers auto-import completions
+                autoImportCompletions = true, -- whether pyright offers auto-import completions
               },
             },
           },

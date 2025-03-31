@@ -19,7 +19,7 @@ config.window_padding = {
 config.background = {
 	{
 		source = {
-			File = wezterm.config_dir .. "/background/high-sierra.jpg",
+			File = wezterm.config_dir .. "/background/sequoia-sunrise.jpg",
 		},
 		hsb = {
 			hue = 1.0,
@@ -33,7 +33,7 @@ config.background = {
 		},
 		width = "100%",
 		height = "100%",
-		opacity = 0.9,
+		opacity = 0.7,
 	},
 }
 

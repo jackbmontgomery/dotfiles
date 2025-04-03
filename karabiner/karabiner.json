@@ -10,7 +10,9 @@
     {
       "name": "Default profile",
       "selected": true,
-      "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" },
+      "virtual_hid_keyboard": {
+        "keyboard_type_v2": "ansi"
+      },
       "complex_modifications": {
         "parameters": {
           "basic.simultaneous_threshold_milliseconds": 50,
@@ -105,9 +107,31 @@
                     "value": 1
                   }
                 ],
-                "description": "Open Google Chrome",
+                "description": "Open Spotify",
                 "from": {
                   "key_code": "h",
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Spotify.app'"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_e",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "Open Google Chrome",
+                "from": {
+                  "key_code": "j",
                   "modifiers": {
                     "optional": ["any"]
                   }
@@ -129,7 +153,7 @@
                 ],
                 "description": "Open WezTerm",
                 "from": {
-                  "key_code": "j",
+                  "key_code": "k",
                   "modifiers": {
                     "optional": ["any"]
                   }
@@ -151,7 +175,7 @@
                 ],
                 "description": "Open Obsidian",
                 "from": {
-                  "key_code": "k",
+                  "key_code": "l",
                   "modifiers": {
                     "optional": ["any"]
                   }
@@ -159,6 +183,28 @@
                 "to": [
                   {
                     "shell_command": "open -a 'Obsidian.app'"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "hyper_sublayer_e",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "description": "Open Preview",
+                "from": {
+                  "key_code": "p",
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Preview.app'"
                   }
                 ],
                 "type": "basic"

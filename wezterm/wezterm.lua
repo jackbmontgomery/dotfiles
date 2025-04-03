@@ -11,10 +11,10 @@ config.font = wezterm.font("JetBrains Mono", { weight = "Bold" })
 config.font_size = 12.5
 
 config.window_padding = {
-	left = 5,
-	right = 5,
-	top = 5,
-	bottom = 5,
+	left = 0,
+	right = 0,
+	top = 10,
+	bottom = 0,
 }
 config.background = {
 	{

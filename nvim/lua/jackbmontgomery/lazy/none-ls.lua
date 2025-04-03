@@ -6,16 +6,16 @@ return {
   },
   config = function()
     local null_ls = require 'null-ls'
-    local formatting = null_ls.builtins.formatting   -- to setup formatters
-    local diagnostics = null_ls.builtins.diagnostics -- to setup linters
+    local formatting = null_ls.builtins.formatting -- to setup formatters
 
     -- list of formatters & linters for mason to install
     require('mason-null-ls').setup {
       ensure_installed = {
         'prettier', -- ts/js formatter
-        'stylua',   -- lua formatter
+        'stylua', -- lua formatter
         'shfmt',
         'ruff',
+--        'rust_analyzer',
       },
 
       automatic_installation = true,
@@ -25,6 +25,7 @@ return {
       formatting.prettier.with { filetypes = { 'html', 'json', 'yaml', 'markdown' } },
       formatting.stylua.with { filetypes = { 'lua' } },
       formatting.shfmt.with { args = { '-i', '4' } },
+ --     formatting.rust_analyzer.with { filetypes = { 'rs' } },
       require('none-ls.formatting.ruff').with { extra_args = { '--extend-select', 'I' } },
       require 'none-ls.formatting.ruff_format',
     }

@@ -6,7 +6,7 @@ return {
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
-      { 'j-hui/fidget.nvim', opts = {} },
+      { 'j-hui/fidget.nvim',       opts = {} },
 
       'hrsh7th/cmp-nvim-lsp',
     },
@@ -80,32 +80,20 @@ return {
           end
         end,
       })
-
       vim.diagnostic.config {
         severity_sort = true,
         float = { border = 'rounded', source = 'if_many' },
-        underline = { severity = vim.diagnostic.severity.ERROR },
-        signs = vim.g.have_nerd_font and {
+        underline = { severity = vim.diagnostic.severity.ERROR, vim.diagnostic.severity.WARN },
+        update_in_insert = false,
+        signs = {
           text = {
             [vim.diagnostic.severity.ERROR] = '󰅚 ',
             [vim.diagnostic.severity.WARN] = '󰀪 ',
             [vim.diagnostic.severity.INFO] = '󰋽 ',
             [vim.diagnostic.severity.HINT] = '󰌶 ',
           },
-        } or {},
-        virtual_text = {
-          source = 'if_many',
-          spacing = 2,
-          format = function(diagnostic)
-            local diagnostic_message = {
-              [vim.diagnostic.severity.ERROR] = diagnostic.message,
-              [vim.diagnostic.severity.WARN] = diagnostic.message,
-              [vim.diagnostic.severity.INFO] = diagnostic.message,
-              [vim.diagnostic.severity.HINT] = diagnostic.message,
-            }
-            return diagnostic_message[diagnostic.severity]
-          end,
         },
+        virtual_text = false,
       }
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -127,11 +115,11 @@ return {
               disableOrganizeImports = true, -- Using Ruff's import organizer
               disableLanguageServices = false,
               analysis = {
-                ignore = { '*' }, -- Ignore all files for analysis to exclusively use Ruff for linting
+                ignore = { '*' },                 -- Ignore all files for analysis to exclusively use Ruff for linting
                 typeCheckingMode = 'off',
                 diagnosticMode = 'openFilesOnly', -- Only analyze open files
                 useLibraryCodeForTypes = true,
-                autoImportCompletions = true, -- whether pyright offers auto-import completions
+                autoImportCompletions = true,     -- whether pyright offers auto-import completions
               },
             },
           },
@@ -145,8 +133,23 @@ return {
             },
           },
         },
+        jsonls = {
+          on_new_config = function(new_config)
+            new_config.settings.json.schemas = new_config.settings.json.schemas or {}
+            vim.list_extend(new_config.settings.json.schemas, require('schemastore').json.schemas())
+          end,
+          settings = {
+            json = {
+              format = {
+                enable = true,
+              },
+              validate = {
+                enable = true,
+              },
+            },
+          },
+        },
       }
-
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua',

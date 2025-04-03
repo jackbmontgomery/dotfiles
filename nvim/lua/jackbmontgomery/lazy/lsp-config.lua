@@ -37,10 +37,6 @@ return {
 
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
-          ---@param client vim.lsp.Client
-          ---@param method vim.lsp.protocol.Method
-          ---@param bufnr? integer some lsp support methods only in specific files
-          ---@return boolean
           local function client_supports_method(client, method, bufnr)
             if vim.fn.has 'nvim-0.11' == 1 then
               return client:supports_method(method, bufnr)
@@ -112,18 +108,19 @@ return {
         basedpyright = {
           settings = {
             basedpyright = {
-              disableOrganizeImports = true, -- Using Ruff's import organizer
+              disableOrganizeImports = true,
               disableLanguageServices = false,
               analysis = {
-                ignore = { '*' },                 -- Ignore all files for analysis to exclusively use Ruff for linting
+                ignore = { '*' },
                 typeCheckingMode = 'off',
-                diagnosticMode = 'openFilesOnly', -- Only analyze open files
+                diagnosticMode = 'openFilesOnly',
                 useLibraryCodeForTypes = true,
-                autoImportCompletions = true,     -- whether pyright offers auto-import completions
+                autoImportCompletions = true,
               },
             },
           },
         },
+
         lua_ls = {
           settings = {
             Lua = {
@@ -147,6 +144,13 @@ return {
                 enable = true,
               },
             },
+          },
+        },
+        typos_lsp = {
+          cmd_env = { RUST_LOG = 'error' },
+          init_options = {
+            config = '~/.config/typos.toml',
+            diagnosticSeverity = 'Error',
           },
         },
       }

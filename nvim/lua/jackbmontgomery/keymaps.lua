@@ -17,3 +17,5 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 vim.keymap.set('n', '<leader>dd', vim.diagnostic.open_float,
   { desc = '[d]isplay [d]iagnostic', noremap = true, silent = true })
+
+vim.keymap.set('v', '1', '$')

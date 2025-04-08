@@ -9,10 +9,14 @@ return {
       harpoon:setup()
 
       vim.keymap.set('n', '<leader>a', function()
-        harpoon:list():add()
+        if #harpoon:list().items <= 4 then
+          harpoon:list():add()
+        else
+          vim.notify('Too many files harpooned', vim.log.levels.WARN)
+        end
       end)
 
-      vim.keymap.set('n', '<C-e>', function()
+      vim.keymap.set('n', '<C-h>', function()
         harpoon.ui:toggle_quick_menu(harpoon:list())
       end)
 

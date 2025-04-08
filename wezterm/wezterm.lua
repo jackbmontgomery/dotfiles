@@ -29,11 +29,11 @@ config.background = {
 	},
 	{
 		source = {
-			Color = "#282c35",
+			Color = "#15171c",
 		},
 		width = "100%",
 		height = "100%",
-		opacity = 0.7,
+		opacity = 0.85,
 	},
 }
 

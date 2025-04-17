@@ -6,7 +6,7 @@ return {
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
-      { 'j-hui/fidget.nvim',       opts = {} },
+      { 'j-hui/fidget.nvim', opts = {} },
 
       'hrsh7th/cmp-nvim-lsp',
     },
@@ -111,8 +111,7 @@ return {
               disableOrganizeImports = true,
               disableLanguageServices = false,
               analysis = {
-                ignore = { '*' },
-                typeCheckingMode = 'off',
+                typeCheckingMode = 'basic',
                 diagnosticMode = 'openFilesOnly',
                 useLibraryCodeForTypes = true,
                 autoImportCompletions = true,
@@ -120,7 +119,6 @@ return {
             },
           },
         },
-
         lua_ls = {
           settings = {
             Lua = {

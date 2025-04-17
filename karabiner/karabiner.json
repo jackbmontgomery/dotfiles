@@ -12,139 +12,18 @@
         },
         "rules": [
           {
-            "description": "Remap Tab to Hyper key when held, Tab when tapped",
+            "description": "Open WezTerm",
             "manipulators": [
               {
-                "from": {
-                  "key_code": "tab"
-                },
-                "to": [
-                  {
-                    "key_code": "left_shift",
-                    "modifiers": ["any"]
-                  },
-                  {
-                    "set_variable": {
-                      "name": "hyper",
-                      "value": 1
-                    }
-                  }
-                ],
-                "to_after_key_up": [
-                  {
-                    "set_variable": {
-                      "name": "hyper",
-                      "value": 0
-                    }
-                  }
-                ],
-                "to_if_alone": [
-                  {
-                    "key_code": "tab"
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Hyper Key sublayer e",
-            "manipulators": [
-              {
-                "conditions": [
-                  {
-                    "name": "hyper",
-                    "type": "variable_if",
-                    "value": 1
-                  },
-                  {
-                    "name": "hyper_sublayer_w",
-                    "type": "variable_if",
-                    "value": 0
-                  }
-                ],
-                "description": "Toggle Hyper sublayer e",
-                "from": {
-                  "key_code": "e",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
-                },
-                "to": [
-                  {
-                    "set_variable": {
-                      "name": "hyper_sublayer_e",
-                      "value": 1
-                    }
-                  }
-                ],
-                "to_after_key_up": [
-                  {
-                    "set_variable": {
-                      "name": "hyper_sublayer_e",
-                      "value": 0
-                    }
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "conditions": [
-                  {
-                    "name": "hyper_sublayer_e",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "description": "Open Spotify",
-                "from": {
-                  "key_code": "h",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "open -a 'Spotify.app'"
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "conditions": [
-                  {
-                    "name": "hyper_sublayer_e",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "description": "Open Google Chrome",
                 "from": {
                   "key_code": "j",
                   "modifiers": {
-                    "optional": ["any"]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "open -a 'Google Chrome.app'"
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "conditions": [
-                  {
-                    "name": "hyper_sublayer_e",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "description": "Open WezTerm",
-                "from": {
-                  "key_code": "k",
-                  "modifiers": {
-                    "optional": ["any"]
+                    "mandatory": [
+                      "left_control"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
                   }
                 },
                 "to": [
@@ -153,20 +32,46 @@
                   }
                 ],
                 "type": "basic"
-              },
+              }
+            ]
+          },
+          {
+            "description": "Open Google Chrome",
+            "manipulators": [
               {
-                "conditions": [
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_control"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
                   {
-                    "name": "hyper_sublayer_e",
-                    "type": "variable_if",
-                    "value": 1
+                    "shell_command": "open -a 'Google Chrome.app'"
                   }
                 ],
-                "description": "Open Obsidian",
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Open Obsidian",
+            "manipulators": [
+              {
                 "from": {
                   "key_code": "l",
                   "modifiers": {
-                    "optional": ["any"]
+                    "mandatory": [
+                      "left_control"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
                   }
                 },
                 "to": [
@@ -175,20 +80,46 @@
                   }
                 ],
                 "type": "basic"
-              },
+              }
+            ]
+          },
+          {
+            "description": "Open VS Code",
+            "manipulators": [
               {
-                "conditions": [
+                "from": {
+                  "key_code": "o",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_control"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
                   {
-                    "name": "hyper_sublayer_e",
-                    "type": "variable_if",
-                    "value": 1
+                    "shell_command": "open -a 'Visual Studio Code.app'"
                   }
                 ],
-                "description": "Open Preview",
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Open Preview",
+            "manipulators": [
+              {
                 "from": {
                   "key_code": "p",
                   "modifiers": {
-                    "optional": ["any"]
+                    "mandatory": [
+                      "left_control"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
                   }
                 },
                 "to": [
@@ -201,147 +132,18 @@
             ]
           },
           {
-            "description": "Hyper Key sublayer w",
+            "description": "Window: maximize",
             "manipulators": [
               {
-                "conditions": [
-                  {
-                    "name": "hyper",
-                    "type": "variable_if",
-                    "value": 1
-                  },
-                  {
-                    "name": "hyper_sublayer_e",
-                    "type": "variable_if",
-                    "value": 0
-                  }
-                ],
-                "description": "Toggle Hyper sublayer w",
-                "from": {
-                  "key_code": "w",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
-                },
-                "to": [
-                  {
-                    "set_variable": {
-                      "name": "hyper_sublayer_w",
-                      "value": 1
-                    }
-                  }
-                ],
-                "to_after_key_up": [
-                  {
-                    "set_variable": {
-                      "name": "hyper_sublayer_w",
-                      "value": 0
-                    }
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "conditions": [
-                  {
-                    "name": "hyper_sublayer_w",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "description": "Window: left-half",
-                "from": {
-                  "key_code": "h",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "open -g rectangle://execute-action?name=left-half"
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "conditions": [
-                  {
-                    "name": "hyper_sublayer_w",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "description": "Window: right-half",
-                "from": {
-                  "key_code": "l",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "open -g rectangle://execute-action?name=right-half"
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "conditions": [
-                  {
-                    "name": "hyper_sublayer_w",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "description": "Window: bottom-half",
-                "from": {
-                  "key_code": "j",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "open -g rectangle://execute-action?name=bottom-half"
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "conditions": [
-                  {
-                    "name": "hyper_sublayer_w",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "description": "Window: top-half",
-                "from": {
-                  "key_code": "k",
-                  "modifiers": {
-                    "optional": ["any"]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "open -g rectangle://execute-action?name=top-half"
-                  }
-                ],
-                "type": "basic"
-              },
-              {
-                "conditions": [
-                  {
-                    "name": "hyper_sublayer_w",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "description": "Window: maximize",
                 "from": {
                   "key_code": "return_or_enter",
                   "modifiers": {
-                    "optional": ["any"]
+                    "mandatory": [
+                      "left_control"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
                   }
                 },
                 "to": [
@@ -360,11 +162,21 @@
       "simple_modifications": [
         {
           "from": {
-            "key_code": "right_command"
+            "key_code": "caps_lock"
           },
           "to": [
             {
               "key_code": "left_control"
+            }
+          ]
+        },
+        {
+          "from": {
+            "key_code": "left_control"
+          },
+          "to": [
+            {
+              "key_code": "caps_lock"
             }
           ]
         }

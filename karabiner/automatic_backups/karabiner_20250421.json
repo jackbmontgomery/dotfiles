@@ -7,8 +7,8 @@
     {
       "complex_modifications": {
         "parameters": {
-          "basic.to_if_alone_timeout_milliseconds": 100,
-          "basic.to_if_held_down_threshold_milliseconds": 100
+          "basic.to_if_alone_timeout_milliseconds": 200,
+          "basic.to_if_held_down_threshold_milliseconds": 200
         },
         "rules": [
           {
@@ -18,8 +18,12 @@
                 "from": {
                   "key_code": "j",
                   "modifiers": {
-                    "mandatory": ["left_command", "left_control"],
-                    "optional": ["any"]
+                    "mandatory": [
+                      "left_control"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
                   }
                 },
                 "to": [
@@ -38,13 +42,65 @@
                 "from": {
                   "key_code": "k",
                   "modifiers": {
-                    "mandatory": ["left_command", "left_control"],
-                    "optional": ["any"]
+                    "mandatory": [
+                      "left_control"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
                   }
                 },
                 "to": [
                   {
                     "shell_command": "open -a 'Google Chrome.app'"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Open Obsidian",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_control"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Obsidian.app'"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Open VS Code",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "o",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_control"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Visual Studio Code.app'"
                   }
                 ],
                 "type": "basic"
@@ -58,8 +114,12 @@
                 "from": {
                   "key_code": "p",
                   "modifiers": {
-                    "mandatory": ["left_command", "left_control"],
-                    "optional": ["any"]
+                    "mandatory": [
+                      "left_control"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
                   }
                 },
                 "to": [
@@ -78,53 +138,17 @@
                 "from": {
                   "key_code": "return_or_enter",
                   "modifiers": {
-                    "mandatory": ["left_command", "left_control"],
-                    "optional": ["any"]
+                    "mandatory": [
+                      "left_control"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
                   }
                 },
                 "to": [
                   {
                     "shell_command": "open -g rectangle://execute-action?name=maximize"
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Window: Left Half",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "h",
-                  "modifiers": {
-                    "mandatory": ["left_command", "left_control"],
-                    "optional": ["any"]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "open -g rectangle://execute-action?name=left-half"
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Window: Right Half",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "l",
-                  "modifiers": {
-                    "mandatory": ["left_command", "left_control"],
-                    "optional": ["any"]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "open -g rectangle://execute-action?name=right-half"
                   }
                 ],
                 "type": "basic"
@@ -143,6 +167,16 @@
           "to": [
             {
               "key_code": "left_control"
+            }
+          ]
+        },
+        {
+          "from": {
+            "key_code": "left_control"
+          },
+          "to": [
+            {
+              "key_code": "caps_lock"
             }
           ]
         }

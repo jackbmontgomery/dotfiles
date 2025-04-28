@@ -17,23 +17,23 @@ config.window_padding = {
 	bottom = 0,
 }
 config.background = {
-	{
-		source = {
-			File = wezterm.config_dir .. "/background/sequoia-sunrise.jpg",
-		},
-		hsb = {
-			hue = 1.0,
-			saturation = 1.02,
-			brightness = 0.25,
-		},
-	},
+	-- {
+	-- 	source = {
+	-- 		File = wezterm.config_dir .. "/background/sequoia-sunrise.jpg",
+	-- 	},
+	-- 	hsb = {
+	-- 		hue = 1.0,
+	-- 		saturation = 1.02,
+	-- 		brightness = 0.25,
+	-- 	},
+	-- },
 	{
 		source = {
 			Color = "#15171c",
 		},
 		width = "100%",
 		height = "100%",
-		opacity = 0.85,
+		opacity = 1,
 	},
 }
 

@@ -12,20 +12,20 @@ return {
     require('mason-null-ls').setup {
       ensure_installed = {
         'prettier', -- ts/js formatter
-        'stylua', -- lua formatter
+        'stylua',   -- lua formatter
         'shfmt',
         'ruff',
---        'rust_analyzer',
+        -- 'rust_analyzer',
       },
 
       automatic_installation = true,
     }
 
     local sources = {
-      formatting.prettier.with { filetypes = { 'html', 'json', 'yaml', 'markdown' } },
+      formatting.prettier.with { filetypes = { 'html', 'json', 'yaml' } },
       formatting.stylua.with { filetypes = { 'lua' } },
       formatting.shfmt.with { args = { '-i', '4' } },
- --     formatting.rust_analyzer.with { filetypes = { 'rs' } },
+      -- formatting.rust_analyzer.with { filetypes = { 'rs' } },
       require('none-ls.formatting.ruff').with { extra_args = { '--extend-select', 'I' } },
       require 'none-ls.formatting.ruff_format',
     }

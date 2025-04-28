@@ -19,7 +19,6 @@ return {
 
       require('mini.pairs').setup()
       require('mini.comment').setup()
-      require('mini.starter').setup()
       require('mini.move').setup()
       require('mini.statusline').setup()
       -- Simple and easy statusline.

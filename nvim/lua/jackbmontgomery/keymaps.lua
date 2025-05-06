@@ -15,8 +15,7 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-vim.keymap.set('n', '<leader>dd', vim.diagnostic.open_float,
-  { desc = '[d]isplay [d]iagnostic', noremap = true, silent = true })
+vim.keymap.set('n', '<leader>dd', vim.diagnostic.open_float, { desc = '[d]isplay [d]iagnostic', noremap = true, silent = true })
 vim.keymap.set('i', '<C-n>', '<Esc>')
 
 vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })

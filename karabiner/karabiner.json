@@ -18,7 +18,9 @@
                 "from": {
                   "key_code": "spacebar",
                   "modifiers": {
-                    "mandatory": ["left_command"]
+                    "mandatory": [
+                      "left_command"
+                    ]
                   }
                 },
                 "to": [
@@ -38,8 +40,13 @@
                 "from": {
                   "key_code": "j",
                   "modifiers": {
-                    "mandatory": ["left_command", "left_control"],
-                    "optional": ["any"]
+                    "mandatory": [
+                      "left_command",
+                      "left_control"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
                   }
                 },
                 "to": [
@@ -58,8 +65,13 @@
                 "from": {
                   "key_code": "k",
                   "modifiers": {
-                    "mandatory": ["left_command", "left_control"],
-                    "optional": ["any"]
+                    "mandatory": [
+                      "left_command",
+                      "left_control"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
                   }
                 },
                 "to": [
@@ -76,10 +88,15 @@
             "manipulators": [
               {
                 "from": {
-                  "key_code": "l",
+                  "key_code": "p",
                   "modifiers": {
-                    "mandatory": ["left_command", "left_control"],
-                    "optional": ["any"]
+                    "mandatory": [
+                      "left_command",
+                      "left_control"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
                   }
                 },
                 "to": [
@@ -98,8 +115,13 @@
                 "from": {
                   "key_code": "h",
                   "modifiers": {
-                    "mandatory": ["left_command", "left_control"],
-                    "optional": ["any"]
+                    "mandatory": [
+                      "left_command",
+                      "left_control"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
                   }
                 },
                 "to": [
@@ -116,15 +138,45 @@
             "manipulators": [
               {
                 "from": {
-                  "key_code": "semicolon",
+                  "key_code": "m",
                   "modifiers": {
-                    "mandatory": ["left_command", "left_control"],
-                    "optional": ["any"]
+                    "mandatory": [
+                      "left_command",
+                      "left_control"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
                   }
                 },
                 "to": [
                   {
                     "shell_command": "open -a 'Spotify.app'"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Open VS Code",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "n",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command",
+                      "left_control"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Visual Studio Code.app'"
                   }
                 ],
                 "type": "basic"
@@ -138,8 +190,13 @@
                 "from": {
                   "key_code": "semicolon",
                   "modifiers": {
-                    "mandatory": ["left_option", "left_control"],
-                    "optional": ["any"]
+                    "mandatory": [
+                      "left_option",
+                      "left_control"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
                   }
                 },
                 "to": [
@@ -158,8 +215,13 @@
                 "from": {
                   "key_code": "h",
                   "modifiers": {
-                    "mandatory": ["left_option", "left_control"],
-                    "optional": ["any"]
+                    "mandatory": [
+                      "left_option",
+                      "left_control"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
                   }
                 },
                 "to": [
@@ -178,8 +240,13 @@
                 "from": {
                   "key_code": "l",
                   "modifiers": {
-                    "mandatory": ["left_option", "left_control"],
-                    "optional": ["any"]
+                    "mandatory": [
+                      "left_option",
+                      "left_control"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
                   }
                 },
                 "to": [
@@ -198,8 +265,13 @@
                 "from": {
                   "key_code": "k",
                   "modifiers": {
-                    "mandatory": ["left_option", "left_control"],
-                    "optional": ["any"]
+                    "mandatory": [
+                      "left_option",
+                      "left_control"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
                   }
                 },
                 "to": [
@@ -218,8 +290,13 @@
                 "from": {
                   "key_code": "j",
                   "modifiers": {
-                    "mandatory": ["left_option", "left_control"],
-                    "optional": ["any"]
+                    "mandatory": [
+                      "left_option",
+                      "left_control"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
                   }
                 },
                 "to": [

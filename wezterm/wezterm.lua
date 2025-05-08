@@ -10,12 +10,16 @@ config.color_scheme = "Gruvbox Dark (Gogh)"
 config.font = wezterm.font("JetBrains Mono", { weight = "Bold" })
 config.font_size = 12.5
 
+-- Disable ligatures
+config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
+
 config.window_padding = {
 	left = 10,
 	right = 0,
 	top = 10,
 	bottom = 0,
 }
+
 config.background = {
 	-- {
 	-- 	source = {
@@ -34,6 +38,19 @@ config.background = {
 		width = "100%",
 		height = "100%",
 		opacity = 1,
+	},
+}
+
+config.keys = {
+	{
+		key = "Enter",
+		mods = "CTRL",
+		action = wezterm.action.SendString("\x1b[99~"),
+	},
+	{
+		key = "Enter",
+		mods = "SHIFT",
+		action = wezterm.action.SendString("\x1b[A"),
 	},
 }
 

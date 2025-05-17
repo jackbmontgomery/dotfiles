@@ -16,7 +16,7 @@ return {
           vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
         end
 
-        map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+        map('gr', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
 
         map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
 
@@ -89,6 +89,10 @@ return {
     }
 
     local capabilities = require('blink.cmp').get_lsp_capabilities()
+
+    -- For some reason these are not working in the Mason installation
+    vim.lsp.enable 'julials'
+    vim.lsp.enable 'ty'
     local servers = {
       lua_ls = {
         settings = {
@@ -106,13 +110,6 @@ return {
           'run',
           'stable',
           'rust-analyzer',
-        },
-      },
-      typos_lsp = {
-        cmd_env = { RUST_LOG = 'error' },
-        init_options = {
-          config = '~/.config/typos.toml',
-          diagnosticSeverity = 'Error',
         },
       },
       basedpyright = {
@@ -143,6 +140,13 @@ return {
               enable = true,
             },
           },
+        },
+      },
+      typos_lsp = {
+        cmd_env = { RUST_LOG = 'error' },
+        init_options = {
+          config = '~/.config/typos.toml',
+          diagnosticSeverity = 'Error',
         },
       },
     }

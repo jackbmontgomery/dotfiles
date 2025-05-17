@@ -9,6 +9,7 @@ config.window_decorations = "RESIZE"
 config.color_scheme = "Gruvbox Dark (Gogh)"
 config.font = wezterm.font("JetBrains Mono", { weight = "Bold" })
 config.font_size = 12.5
+config.hide_mouse_cursor_when_typing = true
 
 -- Disable ligatures
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }

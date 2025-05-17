@@ -25,7 +25,7 @@ return {
       formatting.prettier.with { filetypes = { 'html', 'json', 'yaml' } },
       formatting.stylua.with { filetypes = { 'lua' } },
       formatting.shfmt.with { args = { '-i', '4' } },
-      -- formatting.rust_analyzer.with { filetypes = { 'rs' } },
+      -- formatting.rustfmt.with { filetypes = { 'rs' } },
       require('none-ls.formatting.ruff').with { extra_args = { '--extend-select', 'I' } },
       require 'none-ls.formatting.ruff_format',
     }

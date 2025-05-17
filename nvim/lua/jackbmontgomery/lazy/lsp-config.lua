@@ -97,7 +97,6 @@ return {
 
       local servers = {
         rust_analyzer = {
-          capabilities = capabilities,
           cmd = {
             'rustup',
             'run',
@@ -151,16 +150,6 @@ return {
             diagnosticSeverity = 'Error',
           },
         },
-        marksman = {
-          cmd = {
-            'marksman',
-            'server',
-          },
-          filetypes = { 'markdown', 'markdown.mdx' },
-        },
-        julials = {
-          capabilities = capabilities,
-        },
       }
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
@@ -171,6 +160,7 @@ return {
       require('mason-lspconfig').setup {
         ensure_installed = {},
         automatic_installation = false,
+        automatic_enable = {},
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}

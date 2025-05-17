@@ -8,16 +8,13 @@ return {
     local null_ls = require 'null-ls'
     local formatting = null_ls.builtins.formatting -- to setup formatters
 
-    -- list of formatters & linters for mason to install
     require('mason-null-ls').setup {
       ensure_installed = {
-        'prettier', -- ts/js formatter
-        'stylua',   -- lua formatter
+        'prettier',
+        'stylua',
         'shfmt',
         'ruff',
-        -- 'rust_analyzer',
       },
-
       automatic_installation = true,
     }
 
@@ -25,16 +22,13 @@ return {
       formatting.prettier.with { filetypes = { 'html', 'json', 'yaml' } },
       formatting.stylua.with { filetypes = { 'lua' } },
       formatting.shfmt.with { args = { '-i', '4' } },
-      -- formatting.rustfmt.with { filetypes = { 'rs' } },
       require('none-ls.formatting.ruff').with { extra_args = { '--extend-select', 'I' } },
       require 'none-ls.formatting.ruff_format',
     }
 
     local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
     null_ls.setup {
-      -- debug = true, -- Enable debug mode. Inspect logs with :NullLsLog.
       sources = sources,
-      -- you can reuse a shared lspconfig on_attach callback here
       on_attach = function(client, bufnr)
         if client.supports_method 'textDocument/formatting' then
           vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }

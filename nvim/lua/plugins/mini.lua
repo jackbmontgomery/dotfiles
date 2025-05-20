@@ -16,16 +16,14 @@ return {
       -- - sd'   - [S]urround [D]elete [']quotes
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
+      require('mini.git').setup()
 
       require('mini.pairs').setup()
       require('mini.comment').setup()
       require('mini.move').setup()
-      require('mini.statusline').setup()
-      -- Simple and easy statusline.
-      --  You could remove this setup call if you don't like it,
-      --  and try some other statusline plugin
+      require('mini.icons').setup()
+
       -- local statusline = require 'mini.statusline'
-      -- set use_icons to true if you have a Nerd Font
       -- statusline.setup { use_icons = vim.g.have_nerd_font }
 
       -- You can configure sections in the statusline by overriding their

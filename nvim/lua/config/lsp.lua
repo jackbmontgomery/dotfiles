@@ -1,7 +1,6 @@
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
   callback = function(event)
-    local opts = { buffer = event.buf }
     local map = function(keys, func, desc, mode)
       mode = mode or 'n'
       vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
@@ -32,7 +31,22 @@ vim.keymap.del('v', 'gra') -- Visual mode: code action
 vim.keymap.del('n', 'grr') -- Normal mode: references
 vim.keymap.del('n', 'gri') -- Normal mode: implementation
 vim.keymap.del('n', 'gO') -- Normal mode: document symbol
-vim.keymap.del('i', '<C-S>') -- Insert mode: signature help
+
+vim.diagnostic.config {
+  severity_sort = true,
+  float = { border = 'rounded', source = 'if_many' },
+  underline = { severity = vim.diagnostic.severity.ERROR, vim.diagnostic.severity.WARN },
+  update_in_insert = false,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = '󰅚 ',
+      [vim.diagnostic.severity.WARN] = '󰀪 ',
+      [vim.diagnostic.severity.INFO] = '󰋽 ',
+      [vim.diagnostic.severity.HINT] = '󰌶 ',
+    },
+  },
+  virtual_text = false,
+}
 
 -- This is copied straight from blink
 -- https://cmp.saghen.dev/installation#merging-lsp-capabilities

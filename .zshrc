@@ -23,13 +23,11 @@ if which tmux 2>&1 >/dev/null; then
   fi
 fi
 
-
 alias nv='nvim .'
+alias nvc='nvim -c "cd ~/.config" -c "Oil"'
+alias nvo='nvim -c "cd ~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Jack Montgomery" -c "Oil"'
+
 alias sp='source .venv/bin/activate'
 alias jl='julia'
 
-alias oo='nvim -c "cd ~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Jack Montgomery" -c "Oil"'
-
-export PATH="$PATH:/Users/jackmontgomery/.modular/bin"
-alias config='/usr/bin/git --git-dir=/Users/jackmontgomery/.cfg/ --work-tree=/Users/jackmontgomery'
 alias config='/usr/bin/git --git-dir=/Users/jackmontgomery/dotfiles/ --work-tree=/Users/jackmontgomery'

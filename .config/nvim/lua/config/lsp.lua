@@ -75,4 +75,4 @@ vim.lsp.config('*', {
   root_markers = { '.git' },
 })
 
-vim.lsp.enable { 'luals', 'basedpyright', 'rust_analyzer', 'julials' }
+vim.lsp.enable { 'luals', 'basedpyright', 'rust_analyzer', 'julials', 'typos_lsp' }

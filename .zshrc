@@ -26,5 +26,8 @@ alias nvo='nvim -c "cd ~/Library/Mobile Documents/iCloud~md~obsidian/Documents/J
 
 alias sp='source .venv/bin/activate'
 alias jl='julia'
+alias vim='nvim'
+alias vi='nvim'
 
 alias config='/usr/bin/git --git-dir=/Users/jackmontgomery/dotfiles/ --work-tree=/Users/jackmontgomery'
+alias brew-save='brew bundle dump -f --file=~/.config/Brewfile'

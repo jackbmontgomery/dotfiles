@@ -1,0 +1,18 @@
+#!/bin/bash
+
+TARGET_DIR="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Jack Montgomery/0 - Inbox"
+NOTE="${*:1}"
+
+if [ -z "$1" ]; then
+  echo "Error: No file name provided."
+  echo "Usage: on <filename>"
+  exit 1
+fi
+
+mkdir -p "$TARGET_DIR"
+
+FILE_PATH="$TARGET_DIR/$NOTE.md"
+
+touch "$FILE_PATH"
+
+nvim -c "cd $TARGET_DIR" -c "edit $NOTE.md"

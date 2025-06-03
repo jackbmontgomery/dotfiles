@@ -1,5 +1,5 @@
 return {
-  'epwalsh/obsidian.nvim',
+  'obsidian-nvim/obsidian.nvim',
   version = '*',
   lazy = true,
   ft = 'markdown',
@@ -32,15 +32,25 @@ return {
         end,
         opts = { noremap = false, expr = true, buffer = true },
       },
-      ['<leader>ti'] = {
+      ['<leader>tc'] = {
         action = function()
           return require('obsidian').util.toggle_checkbox()
         end,
-        opts = { buffer = true },
+        opts = { desc = '[T]oggle [C]heckbox', buffer = true },
+      },
+      ['<cr>'] = {
+        action = function()
+          return require('obsidian').util.smart_action()
+        end,
+        opts = { buffer = true, expr = true },
+      },
+      ['<leader>ot'] = {
+        action = '<cmd>ObsidianTemplate<cr>',
+        opts = { desc = '[O]bsidian [T]emplate' },
       },
     },
     completion = {
-      nvim_cmp = false,
+      blink = true,
     },
     ui = {
       checkboxes = {},

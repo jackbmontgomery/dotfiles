@@ -1,0 +1,13 @@
+#!/bin/bash
+
+TASK="${*:1}"
+FILE="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Jack Montgomery/Home.md"
+
+if [[ -z "$TASK" ]]; then
+  echo "Usage: $0 \"task description\" path/to/file"
+  exit 1
+fi
+
+sed -i '' "/## Tasks and Reminders/a\\
+- $TASK
+" "$FILE"

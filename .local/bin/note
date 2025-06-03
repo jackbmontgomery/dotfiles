@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TARGET_DIR="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Jack Montgomery/0 - Inbox"
+TARGET_DIR="$OBSIDIAN_VAULT/0 - Inbox"
 NOTE="${*:1}"
 
 if [ -z "$1" ]; then

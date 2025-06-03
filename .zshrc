@@ -31,3 +31,7 @@ alias vi='nvim'
 
 alias config='/usr/bin/git --git-dir=/Users/jackmontgomery/dotfiles/ --work-tree=/Users/jackmontgomery'
 alias brew-save='brew bundle dump -f --file=~/.config/Brewfile'
+
+export OBSIDIAN_VAULT="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Jack Montgomery"
+
+[ -f ~/.secrets ] && source ~/.secrets

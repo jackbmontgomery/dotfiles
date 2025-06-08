@@ -20,9 +20,11 @@ if which tmux 2>&1 >/dev/null; then
   fi
 fi
 
+export OBSIDIAN_VAULT="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Jack Montgomery"
+
 alias nv='nvim .'
 alias nvc='nvim -c "cd ~/.config" -c "Oil"'
-alias nvo='nvim -c "cd ~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Jack Montgomery" -c "Oil"'
+alias nvo='nvim -c "cd $OBSIDIAN_VAULT" -c "edit Home.md"'
 
 alias sp='source .venv/bin/activate'
 alias jl='julia'
@@ -32,6 +34,5 @@ alias vi='nvim'
 alias config='/usr/bin/git --git-dir=/Users/jackmontgomery/dotfiles/ --work-tree=/Users/jackmontgomery'
 alias brew-save='brew bundle dump -f --file=~/.config/Brewfile'
 
-export OBSIDIAN_VAULT="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Jack Montgomery"
 
 [ -f ~/.secrets ] && source ~/.secrets

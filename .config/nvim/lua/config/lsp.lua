@@ -35,7 +35,7 @@ vim.keymap.del('n', 'gO') -- Normal mode: document symbol
 vim.diagnostic.config {
   severity_sort = true,
   float = {
-    focusable = false,
+    focusable = true,
     style = 'minimal',
     border = 'single',
     source = 'if_many',
@@ -75,4 +75,4 @@ vim.lsp.config('*', {
   root_markers = { '.git' },
 })
 
-vim.lsp.enable { 'luals', 'basedpyright', 'rust_analyzer', 'julials', 'typos_lsp', 'mojo' }
+vim.lsp.enable { 'luals', 'basedpyright', 'rust_analyzer', 'julials', 'typos_lsp' }

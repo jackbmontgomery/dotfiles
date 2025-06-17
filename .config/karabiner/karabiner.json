@@ -238,7 +238,7 @@
             "manipulators": [
               {
                 "from": {
-                  "key_code": "return_or_enter",
+                  "key_code": "semicolon",
                   "modifiers": {
                     "mandatory": [
                       "left_option",

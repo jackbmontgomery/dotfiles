@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+
+set -e
+
+if [[ -z "$OBSIDIAN_VAULT" ]]; then
+  echo "Error: OBSIDIAN_VAULT environment variable not set." >&2
+  exit 1
+fi
+
+VAULT="$OBSIDIAN_VAULT"
+INBOX_PATH="$VAULT/0 - Inbox"
+PROJECTS_PATH="$VAULT/3 - Projects"
+COURSES_PATH="$VAULT/4 - Courses"
+REMINDERS_PATH="$VAULT/Reminders.md"
+HOME_FILE_PATH="$VAULT/Home.md"
+
+OUTPUT=()
+OUTPUT+=("# Home" "")
+
+# Add reminders section first
+OUTPUT+=("## Reminders")
+if [[ -f "$REMINDERS_PATH" ]]; then
+  copy=false
+  while IFS= read -r line; do
+    if [[ "$line" =~ ^#\ Reminders ]]; then
+      copy=true
+      continue
+    fi
+    if $copy; then
+      OUTPUT+=("$line")
+    fi
+  done < "$REMINDERS_PATH"
+  OUTPUT+=("")
+else
+  echo "Warning: Could not open Reminders.md" >&2
+fi
+
+# Helper to add list of markdown files from a directory
+list_dir_markdown() {
+  local dir="$1"
+  local label="$2"
+  OUTPUT+=("## $label")
+  if [[ -d "$dir" ]]; then
+    while IFS= read -r -d '' file; do
+      name="$(basename "$file")"
+      title="${name%.md}"
+      short_dir="${dir##*/}"
+      OUTPUT+=("- [[${short_dir}/${title}|${title}]]")
+    done < <(find "$dir" -maxdepth 1 -type f -name '*.md' -print0)
+  else
+    echo "Warning: Could not open $dir" >&2
+  fi
+  OUTPUT+=("")
+}
+
+# List notes
+list_dir_markdown "$INBOX_PATH" "Inbox"
+list_dir_markdown "$PROJECTS_PATH" "Projects"
+list_dir_markdown "$COURSES_PATH" "Courses"
+
+# Write to Home.md
+{
+  printf "%s\n" "${OUTPUT[@]}"
+} > "$HOME_FILE_PATH"

@@ -1,13 +1,13 @@
 #!/bin/bash
 
 TASK="${*:1}"
-FILE="$OBSIDIAN_VAULT/Home.md"
+FILE="$OBSIDIAN_VAULT/Reminders.md"
 
 if [[ -z "$TASK" ]]; then
   echo "Usage: $0 \"task description\" path/to/file"
   exit 1
 fi
 
-sed -i '' "/## Tasks and Reminders/a\\
-- $TASK
+sed -i '' "/# Reminders/a\\
+- [ ] $TASK
 " "$FILE"

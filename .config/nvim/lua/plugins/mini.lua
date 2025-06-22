@@ -17,10 +17,8 @@ return {
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
       require('mini.git').setup()
-
       require('mini.pairs').setup()
       require('mini.comment').setup()
-      require('mini.move').setup()
       require('mini.icons').setup()
 
       -- local statusline = require 'mini.statusline'

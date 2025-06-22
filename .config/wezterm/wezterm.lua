@@ -8,7 +8,7 @@ config.window_close_confirmation = "NeverPrompt"
 config.window_decorations = "RESIZE"
 config.color_scheme = "Gruvbox Dark (Gogh)"
 config.font = wezterm.font("JetBrains Mono", { weight = "Bold" })
-config.font_size = 15
+config.font_size = 16
 config.hide_mouse_cursor_when_typing = true
 
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }

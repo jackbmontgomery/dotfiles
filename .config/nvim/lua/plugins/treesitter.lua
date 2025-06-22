@@ -4,7 +4,7 @@ return {
     build = ':TSUpdate',
     main = 'nvim-treesitter.configs',
     opts = {
-      ensure_installed = { 'lua', 'markdown', 'julia', 'python', 'rust' },
+      ensure_installed = { 'lua', 'markdown', 'julia', 'python', 'rust', 'gitcommit' },
       auto_install = true,
       highlight = {
         enable = true,

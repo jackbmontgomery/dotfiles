@@ -34,5 +34,4 @@ alias vi='nvim'
 alias config='/usr/bin/git --git-dir=/Users/jackmontgomery/dotfiles/ --work-tree=/Users/jackmontgomery'
 alias brew-save='brew bundle dump -f --file=~/.config/Brewfile'
 
-
 [ -f ~/.secrets ] && source ~/.secrets

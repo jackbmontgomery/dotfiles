@@ -238,7 +238,7 @@
             "manipulators": [
               {
                 "from": {
-                  "key_code": "semicolon",
+                  "key_code": "return_or_enter",
                   "modifiers": {
                     "mandatory": [
                       "left_option",
@@ -377,11 +377,11 @@
                   {
                     "key_code": "down_arrow"
                   }
-                ]
-                "type": "basic",
+                ],
+                "type": "basic"
               }
             ]
-          },
+          }
         ]
       },
       "name": "Default profile",

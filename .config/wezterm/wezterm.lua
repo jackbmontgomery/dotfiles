@@ -7,7 +7,8 @@ config.enable_tab_bar = false
 config.window_close_confirmation = "NeverPrompt"
 config.window_decorations = "RESIZE"
 config.color_scheme = "Gruvbox Dark (Gogh)"
-config.font = wezterm.font("JetBrains Mono", { weight = "Bold" })
+-- config.font = wezterm.font("JetBrains Mono", { weight = "Bold" })
+config.font = wezterm.font("JetBrains Mono")
 config.font_size = 16
 config.hide_mouse_cursor_when_typing = true
 

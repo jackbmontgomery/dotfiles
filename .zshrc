@@ -4,7 +4,6 @@ ZSH_THEME="aphrodite/aphrodite"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
@@ -21,6 +20,7 @@ if which tmux 2>&1 >/dev/null; then
 fi
 
 export OBSIDIAN_VAULT="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Jack Montgomery"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
 alias nv='nvim .'
 alias nvc='nvim -c "cd ~/.config" -c "Oil"'

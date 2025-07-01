@@ -13,9 +13,10 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '\e[99~' autosuggest-accept
 
-if which tmux 2>&1 >/dev/null; then
-  if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
-    tmux attach -t default || tmux new -s default; exit
+if which tmux >/dev/null 2>&1; then
+  if [ "$TERM" != "screen-256color" ] && [ "$TERM" != "screen" ] && [ -z "$NVIM" ]; then
+    tmux attach -t default || tmux new -s default
+    exit
   fi
 fi
 

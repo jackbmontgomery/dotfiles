@@ -7,6 +7,7 @@ return {
     'nvim-lua/plenary.nvim',
   },
   opts = {
+    legacy_commands = false,
     workspaces = {
       {
         name = 'Jack Montgomery',
@@ -24,37 +25,11 @@ return {
       date_format = '%Y-%m-%d',
       time_format = '%H:%M:%S',
     },
-
-    mappings = {
-      ['gf'] = {
-        action = function()
-          return require('obsidian').util.gf_passthrough()
-        end,
-        opts = { noremap = false, expr = true, buffer = true },
-      },
-      ['<leader>tc'] = {
-        action = function()
-          return require('obsidian').util.toggle_checkbox()
-        end,
-        opts = { desc = '[T]oggle [C]heckbox', buffer = true },
-      },
-      ['<cr>'] = {
-        action = function()
-          return require('obsidian').util.smart_action()
-        end,
-        opts = { buffer = true, expr = true },
-      },
-      ['<leader>ot'] = {
-        action = '<cmd>ObsidianTemplate<cr>',
-        opts = { desc = '[O]bsidian [T]emplate' },
-      },
-    },
     completion = {
       blink = true,
     },
-    ui = {
-      checkboxes = {},
-      bullets = {},
+    footer = {
+      enabled = false,
     },
   },
 }

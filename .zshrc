@@ -28,6 +28,7 @@ alias nvc='nvim -c "cd ~/.config" -c "Oil"'
 alias nvo='nvim -c "cd $OBSIDIAN_VAULT" -c "edit Home.md"'
 
 alias sp='source .venv/bin/activate'
+alias py='python3'
 alias jl='julia'
 alias vim='nvim'
 alias vi='nvim'

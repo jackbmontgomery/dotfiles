@@ -9,7 +9,6 @@ return {
     local i = ls.insert_node
     local f = ls.function_node
 
-    -- Add your custom LaTeX snippet:
     ls.add_snippets('tex', {
       s('beg', {
         t '\\begin{',

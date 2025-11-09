@@ -50,3 +50,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+vim.g.markdown_folding = 1
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'markdown',
+  callback = function()
+    vim.opt.foldlevel = 99
+    vim.opt.foldlevelstart = 99
+    vim.opt.foldenable = true
+  end,
+})

@@ -18,8 +18,6 @@ return {
 
     new_notes_location = 'notes_subdir',
 
-    disable_frontmatter = true,
-
     templates = {
       subdir = 'Templates',
       date_format = '%Y-%m-%d',

@@ -5,7 +5,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       mode = mode or 'n'
       vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
     end
-    map('gr', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+    map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
 
     map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
 
@@ -25,12 +25,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
-vim.keymap.del('n', 'grn') -- Normal mode: rename
-vim.keymap.del('n', 'gra') -- Normal mode: code action
-vim.keymap.del('v', 'gra') -- Visual mode: code action
-vim.keymap.del('n', 'grr') -- Normal mode: references
-vim.keymap.del('n', 'gri') -- Normal mode: implementation
-vim.keymap.del('n', 'gO') -- Normal mode: document symbol
+-- vim.keymap.del('n', 'grn') -- Normal mode: rename
+-- vim.keymap.del('n', 'gra') -- Normal mode: code action
+-- vim.keymap.del('v', 'gra') -- Visual mode: code action
+-- vim.keymap.del('n', 'grr') -- Normal mode: references
+-- vim.keymap.del('n', 'gri') -- Normal mode: implementation
+-- vim.keymap.del('n', 'gO') -- Normal mode: document symbol
 
 vim.diagnostic.config {
   severity_sort = true,

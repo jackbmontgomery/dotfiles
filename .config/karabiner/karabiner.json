@@ -213,7 +213,7 @@
             "manipulators": [
               {
                 "from": {
-                  "key_code": "i",
+                  "key_code": "u",
                   "modifiers": {
                     "mandatory": [
                       "left_command",

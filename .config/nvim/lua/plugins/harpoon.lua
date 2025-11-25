@@ -19,19 +19,19 @@ return {
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end, { desc = 'Toggle [h]arpoon [m]enu' })
 
-    vim.keymap.set('n', '<leader>1', function()
+    vim.keymap.set('n', '<leader>j', function()
       harpoon:list():select(1)
     end)
 
-    vim.keymap.set('n', '<leader>2', function()
+    vim.keymap.set('n', '<leader>k', function()
       harpoon:list():select(2)
     end)
 
-    vim.keymap.set('n', '<leader>3', function()
+    vim.keymap.set('n', '<leader>l', function()
       harpoon:list():select(3)
     end)
 
-    vim.keymap.set('n', '<leader>4', function()
+    vim.keymap.set('n', '<leader>u', function()
       harpoon:list():select(4)
     end)
   end,

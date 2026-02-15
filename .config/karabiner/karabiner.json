@@ -234,6 +234,31 @@
             ]
           },
           {
+            "description": "Open NetNewsWire",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "i",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command",
+                      "left_control"
+                    ],
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'NetNewsWire.app'"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "Open Goodnotes",
             "manipulators": [
               {

@@ -54,6 +54,9 @@ return {
           ['<C-s>'] = false,
           ['<C-h>'] = false,
         },
+        lsp_file_methods = {
+          autosave_changes = true,
+        },
         view_options = {
           is_hidden_file = function(name, bufnr)
             local dir = require('oil').get_current_dir(bufnr)

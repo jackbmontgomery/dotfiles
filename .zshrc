@@ -1,7 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="aphrodite/aphrodite"
 
-plugins=(git)
+plugins=(git timer)
 
 source $ZSH/oh-my-zsh.sh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -20,12 +20,16 @@ if which tmux >/dev/null 2>&1; then
   fi
 fi
 
-export OBSIDIAN_VAULT="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Jack Montgomery"
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+# export OBSIDIAN_VAULT="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Jack Montgomery"
+# export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+#
+export ZK_NOTEBOOK_DIR="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Jack Montgomery/"
+
+export PATH="/Applications/MATLAB_R2025b.app/bin:$PATH"
 
 alias nv='nvim .'
 alias nvc='nvim -c "cd ~/.config" -c "Oil"'
-alias nvo='nvim -c "cd $OBSIDIAN_VAULT" -c "edit Home.md"'
+# alias nvo='nvim -c "cd $OBSIDIAN_VAULT" -c "edit Home.md"'
 
 alias sp='source .venv/bin/activate'
 alias py='python3'

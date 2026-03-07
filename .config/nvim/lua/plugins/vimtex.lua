@@ -21,7 +21,7 @@ return {
     }
 
     vim.g.vimtex_syntax_enabled = 1
-    vim.g.vimtex_tex_conceal = 0
+    vim.g.vimtex_syntax_conceal_disable = 1
     vim.wo.conceallevel = 0
   end,
 }

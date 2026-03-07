@@ -20,12 +20,9 @@ if which tmux >/dev/null 2>&1; then
   fi
 fi
 
-# export OBSIDIAN_VAULT="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Jack Montgomery"
-# export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-#
 export ZK_NOTEBOOK_DIR="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Jack Montgomery/"
-
 export PATH="/Applications/MATLAB_R2025b.app/bin:$PATH"
+export PYTHONSTARTUP=~/.config/python/startup.py
 
 alias nv='nvim .'
 alias nvc='nvim -c "cd ~/.config" -c "Oil"'

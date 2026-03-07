@@ -3,3 +3,4 @@ extend-exclude = ["*.lua"]
 
 [default.extend-words]
 "noice" = "noice"
+"ficks" = "ficks"

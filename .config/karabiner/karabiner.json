@@ -159,31 +159,6 @@
             ]
           },
           {
-            "description": "Open VS Code",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "n",
-                  "modifiers": {
-                    "mandatory": [
-                      "left_command",
-                      "left_control"
-                    ],
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "open -a 'Visual Studio Code.app'"
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
             "description": "Open Obsidian",
             "manipulators": [
               {
@@ -209,7 +184,7 @@
             ]
           },
           {
-            "description": "Open Skim",
+            "description": "Open Texifier",
             "manipulators": [
               {
                 "from": {
@@ -226,7 +201,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a 'Skim.app'"
+                    "shell_command": "open -a 'Texifier.app'"
                   }
                 ],
                 "type": "basic"

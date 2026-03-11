@@ -46,13 +46,14 @@ return {
       -- [[ Configure Telescope ]]
       -- See `:help telescope` and `:help telescope.setup()`
       require('telescope').setup {
-        -- You can put your default mappings / updates / etc. in here
-        --  All the info you're looking for is in `:help telescope.setup()`
-        --
         defaults = {
           layout_strategy = 'vertical',
+          layout_config = {
+            vertical = {
+              preview_cutoff = 40,
+            },
+          },
         },
-        -- pickers = {}
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
@@ -99,11 +100,6 @@ return {
       vim.keymap.set('n', '<leader>sc', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch Neovim [C]onfig Files' })
-
-      -- Shortcut for searching your Obsidian vault
-      vim.keymap.set('n', '<leader>so', function()
-        builtin.find_files { cwd = '~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Jack Montgomery/' }
-      end, { desc = '[S]earch [O]bsidian files' })
     end,
   },
 }

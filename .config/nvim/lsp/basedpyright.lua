@@ -7,7 +7,7 @@ return {
       disableLanguageServices = false,
       analysis = {
         ignore = { '*' },
-        -- typeCheckingMode = 'standard',
+        typeCheckingMode = 'recommended',
         -- diagnosticMode = 'openFilesOnly',
         -- useLibraryCodeForTypes = true,
         -- autoImportCompletions = true,

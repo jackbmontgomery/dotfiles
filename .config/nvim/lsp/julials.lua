@@ -1,10 +1,11 @@
 return {
-    cmd = {
-        "julia",
-        "--project=".."~/.julia/environments/lsp/",
-        "--startup-file=no",
-        "--history-file=no",
-        "-e", [[
+  cmd = {
+    'julia',
+    '--project=' .. '~/.julia/environments/lsp/',
+    '--startup-file=no',
+    '--history-file=no',
+    '-e',
+    [[
             using Pkg
             Pkg.instantiate()
             using LanguageServer
@@ -30,9 +31,9 @@ return {
                     server = LanguageServer.LanguageServerInstance(stdin, stdout, project_path, depot_path)
         server.runlinter = true
             run(server)
-        ]]
-    },
-    filetypes = { 'julia' },
-    root_markers = { "Project.toml", "JuliaProject.toml" },
-    settings = {}
+        ]],
+  },
+  filetypes = { 'julia' },
+  root_markers = { 'Project.toml', 'JuliaProject.toml' },
+  settings = {},
 }

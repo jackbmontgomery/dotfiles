@@ -1,5 +1,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+vim.g.tex_flavor = 'plain'
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -16,7 +17,7 @@ end)
 
 vim.opt.breakindent = true
 
-vim.opt.conceallevel = 1
+vim.opt.conceallevel = 0
 
 vim.opt.undofile = true
 
@@ -59,5 +60,12 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.opt.foldlevel = 99
     vim.opt.foldlevelstart = 99
     vim.opt.foldenable = true
+  end,
+})
+
+vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
+  pattern = '*.tex',
+  callback = function()
+    vim.bo.filetype = 'plaintex'
   end,
 })

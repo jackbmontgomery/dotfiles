@@ -23,8 +23,9 @@ fi
 export ZK_NOTEBOOK_DIR="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Jack Montgomery/"
 export PATH="/Applications/MATLAB_R2025b.app/bin:$PATH"
 export PYTHONSTARTUP=~/.config/python/startup.py
+export JULIA_NUM_THREADS=auto
 
-alias nv='nvim .'
+alias nv='nvim'
 alias nvc='nvim -c "cd ~/.config" -c "Oil"'
 # alias nvo='nvim -c "cd $OBSIDIAN_VAULT" -c "edit Home.md"'
 
